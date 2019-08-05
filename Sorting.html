@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title>Sorting Machine</title>
+		<link rel="stylesheet" href="Main.css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	</head>
+
+
+	<body .sorting>
+		<link rel="stylesheet" href="Main.css">
+
+
+		<div class="contentwrap" style="overflow: auto; overflow-x: hidden; margin-top: 50px;">
+
+
+			<nav class="navbar fixed-top navbar-expand-md navbar-dark" style="background-color: black">
+			  <a class="navbar-brand" href="index.html">Dakota Rowehl</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav ml-auto">
+			      <li class="nav-item">
+			        <a class="nav-link" href="index.html">Home</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="AboutMe.html">About Me</a>
+			      </li>
+			      <li class="nav-item active">
+			        <a class="nav-link" href="MyProjects.html">Projects</a>
+			      </li>
+			      <li class="nav-item">
+			      	<a class="nav-link" href="#"
+			      	  data-toggle="modal" data-target="#exampleModalCenter">
+					  Contact
+					</a>
+			      </li>
+			     </ul>
+			  </div>
+			</nav>
+
+			<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLongTitle">Send an email, or leave a message.</h5>
+
+			      </div>
+			      <div class="modal-body">
+			      	<a><img class="res2" src="https://i.imgur.com/X3b9WuZ.png"></a>
+			        <p class="modal-text">dakota.rowehl@gmail.com</p>
+			        <a><img class="res2" src="https://i.imgur.com/pNxi7eu.png"></a>
+			        <p class="modal-text">(631) 461-7420</p>
+			      </div>
+			      <div class="modal-footer">
+			      	<p class="modal-title">I'll get back to you within 1-2 business days.</p>
+			        <button type="button" class="btn btnmo" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+			<div class="card col-lg-12 col-12 col-sm-12 col-md-12 col-xl-12 info">
+			  <div class="row no-gutters">
+			    <div class="col-md-6 col-lg-6 col-xl-7">
+			      <div class="card-body">
+			        <h5 class="card-title">Project Summary</h5>
+			        <p class="">This was, initially, a group project with the goal of creating a machine that was capable of actively sorting 30 marbles based on their material composition, wood, plastic, or metal. As the semester progressed, my group fell apart, but I rose to the challenge and I'm extremely satisfied with my work.</p>
+			      </div>
+			    </div>
+			    <div class="col-xl-5 col-lg-6 col-sm-12 col-md-6 " style="float: right;">
+			      <img src="https://i.imgur.com/tUGRmvR.jpg" class="card-img prjimglft" style="">
+			    </div>
+			  </div>
+			</div>
+
+			<div class="card col-lg-12 col-12 col-sm-12 col-md-12 col-xl-12 info">
+			  <div class="row no-gutters">
+			    <div class="col-md-6 col-lg-6 col-xl-7">
+			      <div class="card-body">
+			        <h5 class="card-title">System Summary</h5>
+			        <p class="">A summary of the operation of this system is as follows.</p>
+			        <ol>
+			        	<li>Marbles are fed down a ramp until they are stopped by a rear servo gate.</li>
+			        	<li>One marble is allowed to enter a scanning chamber by opening the rear servo gate. Inside the chamber, the marble is held in position by a center servo gate.</li>
+			        	<li>The marble is scanned by both an IR sensor and an RGB sensor to determine the marble material.</li>
+			        	<li>Upon deciding the material of the marble, the center servo gate opens to allow the ball to roll down a ramp into a spout which is directed by a third servo. The spout directs the ball into one of three boxes, one for each material.</li>
+			        	<li>The center servo gate closes, and the rear servo opens to allow another marble into the chamber.</li>
+			        </ol>
+			        <p>The servos and sensors are controlled by an Arduino Mega, using an algorithm I created, which I go deeper into further down.</p>
+			        <p>The RGB sensor reads red, green, blue, and clear light values, all of which are highly dependent upon ambient light levels in the testing environment. To calibrate the system for different ambient light levels, a calibration curve was developed with RGBC values against overhead lighting as read by a photoresistor.</p>
+			        <p>Calibration curves are be used to find expected values for red, green, blue, and clear, at any given light level, for each of the three materials. These values are compared to measured values to determine the makeup of each marble.</p>
+			        <p>A similar calibration process was carried out for the IR sensor, which operates by emitting IR light towards the measuring chamber and recording the amount reflected by the marble. Theoretically each material should absorb and reflect different amounts of IR light.</p>
+			       </div>
+			    </div>
+			    <div class="col-xl-5 col-lg-6 col-sm-12 col-md-6 " style="float: right;">
+			      <img src="https://i.imgur.com/kYLbBjf.jpg" class="card-img prjimglft">
+			    </div>
+			  </div>
+			</div>
+
+			<div class="card col-lg-12 col-12 col-sm-12 col-md-12 col-xl-12 info">
+			  <div class="row no-gutters">
+			    <div class="">
+			      <div class="card-body">
+
+			        <h5 class="card-title">Agorithm Summary</h5>
+
+			  		<div class="algimg" style="float: right;">
+			      	<img src="https://i.imgur.com/xmKUNLU.jpg" class="card-img" style="border-radius: 0px; margin: 0; width: 100%;">
+			   		</div>
+
+
+			        <p class="">A little more detail about the sorting algorithm. To the right, (or above on mobile devices) you can see the output on the arduino's serial monitor output. The measured data is in the first six columns, with the first five being measurements taken off the marbles, the sixth being the ambient light level taken by the photoresistor.</p>
+			        <p>What's happening here is the ambient light level is being used to determine what the expected values for each material should be. These values are then compared to the measured values, and each value that matches counts as a point in that materials score. The material with the highest score is then selected to classify that marble.</p>
+			        <p>The final column indicates what material was selected based on the score. As you can see here, a marble was sorted successfully on their first attempts, three times in a row. In the event a marble cannot be classified on the first attempt, the marble would remain in the chamber until a subsequent measurement is able to classify it.</p>
+			        <p>The actual measurement and classification process is essentially instantaneous. The time it takes for the marble to move down the ramps and between the servos is just a few seconds, and so this system can successfully sort marbles quite fast.</p>
+			        <p>The full program, which was all developed in the Arduino IDE, is available on my GitHub, link to follow.</p>
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
+
+			<div class="card col-lg-12 col-12 col-sm-12 col-md-12 col-xl-12 info">
+			  <div class="row no-gutters">
+			    <div class="col-md-6 col-lg-6 col-xl-7">
+			      <div class="card-body">
+			        <h5 class="card-title">Design Summary</h5>
+			        <p class="">Here you can see the final CAD model of the whole sorting machine, which I had been working on simultaneously.</p>
+			        <p>You can see the servo gates on either side of the measurement chamber, which is cut out to allow room for the sensors. At the end is the sorting spout, mounted on the final servo.</p>
+			        <p>Positioned in front of and below the spout during testing were three boxes, one for each material.</p>
+			      </div>
+			    </div>
+			    <div class="col-xl-5 col-lg-6 col-sm-12 col-md-6 " style="float: right;">
+			      <img src="https://i.imgur.com/OXZcm3h.jpg" class="card-img prjimglft">
+			    </div>
+			  </div>
+			</div>
+
+			<div class="card col-lg-12 col-12 col-sm-12 col-md-12 col-xl-12 info">
+			  <div class="row no-gutters">
+			    <div class="col-md-6 col-lg-6 col-xl-7">
+			      <div class="card-body" style="min-height: calc(100% - 75px);">
+			        <h5 class="card-title">Result</h5>
+			        <p class="">Behold, my magnificent sorting machine!</p>
+			        <p>Really shotty structure I know, but I was on a tight schedule and cardboard was my only available material at the moment, this was intended to be a three person project after all.</p>
+			        <p>Despite it's aesthetic short comings, the machine actually worked very well. Feeding the system by hand, up to 8-10 marbles at a time, I was able to sort marbles with, with roughly perfect accuracy, at a satisfying pace.</p>
+			        <p>Unfortunately, due to the loose construction, I could not load all 30 marbles at once without jamming the servo gates, effecting the internal lighting, and destroying the accuracy of the measured data.</p>
+			        <p>If I were to take this project any further in the future, I would focus my efforts on improving the structure with a 3D printed, rigid assembly. Additionally, the system should ideally be reoriented vertically to replace the time consuming ramps.</p>
+			        <p>Much more thorough documentation, complete with early concepts, a wiring diagram, and calibration examples, can be in my final report, available for download below. A video showing some of my first successful sorts is also linked at the bottom of this page.</p>
+
+			      </div>
+			    </div>
+			    <div class="col-xl-5 col-lg-6 col-sm-12 col-md-6 " style="float: right;">
+			      <img src="https://i.imgur.com/HQvOcO3.jpg" class="card-img prjimglft">
+			    </div>
+			  </div>
+			</div>
+
+			<div class="card text-left Report-Card">
+	  		 		 <ul class="list-group list-group-flush">
+	    				<li class="list-group-item">
+
+	    					<div class="overlay">
+	    						<a href="https://github.com/DakotaRowehl/Arduino-Sorting-Machine/blob/master/SortingMachineCode.ino"><img class="res" src="https://i.imgur.com/MkF9H63.png"></a>
+							</div>
+
+	    					<p class="card-text"><a class="listr" href="https://github.com/DakotaRowehl/Arduino-Sorting-Machine/blob/master/SortingMachineCode.ino">GitHub Files</a></p>
+
+	    				</li>
+
+	    				<li class="list-group-item">
+
+	    					<div class="overlay">
+	    						<a href="https://docs.google.com/document/d/1ZGQcR61MXbVUH_QZdRtNgItNd1-o_hz6cGY7eQik4aE/export?format=pdf"><img class="res" src="https://i.imgur.com/OfoRpMv.png"></a>
+							</div>
+
+	    					<p class="card-text"><a class="listr" href="https://docs.google.com/document/d/1ZGQcR61MXbVUH_QZdRtNgItNd1-o_hz6cGY7eQik4aE/export?format=pdf">Download Report</a></p>
+
+	    				</li>
+
+
+
+	  			  	</ul>
+			</div>
+
+
+			<div class="card info botvid">
+				<iframe class="UTUBE" src="https://www.youtube.com/embed/5A-r8x3ZDCk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+			</div>
+
+
+		</div>
+
+		
+
+		<div class="footer">
+
+			<div class="overlay">
+			   <a href="https://twitter.com/DakotaRowehl"><img class="footimg2" src="https://i.imgur.com/veyd34p.png"></a>
+			</div>
+
+			<div class="overlay">
+			   <a href="https://www.linkedin.com/in/dakota-rowehl-556220174/"><img class="footimg2" src="https://i.imgur.com/yUmBRGQ.png"></a>
+			</div>
+
+		</div>
+
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+	</body>
+
+</html>
